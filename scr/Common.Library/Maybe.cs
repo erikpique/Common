@@ -1,21 +1,20 @@
-﻿namespace Common.Library
+﻿namespace Common.Library;
+
+public class Maybe<T> : IMaybe<T>
 {
-    public class Maybe<T> : IMaybe<T>
+    public static readonly Maybe<T> Nothing = new();
+
+    public bool HasValue { get; }
+
+    public T Value { get; }
+
+    private Maybe() { }
+
+    public Maybe(T value)
     {
-        public static readonly Maybe<T> Nothing = new();
-
-        public bool HasValue { get; }
-
-        public T Value { get; }
-
-        private Maybe() { }
-
-        public Maybe(T value)
-        {
-            HasValue = !Equals(value, null);
-            Value = value;
-        }
-
-        public static implicit operator Maybe<T>(T value) => new(value);
+        HasValue = !Equals(value, null);
+        Value = value;
     }
+
+    public static implicit operator Maybe<T>(T value) => new(value);
 }

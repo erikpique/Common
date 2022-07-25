@@ -7,6 +7,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{25D417F1-48D
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common.Library", "scr\Common.Library\Common.Library.csproj", "{1531F36F-3225-47B5-BD74-EC744CF609C3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common.EFCore.Implementation", "scr\Common.EFCore.Implementation\Common.EFCore.Implementation.csproj", "{B232E1B0-C594-4B1E-87B0-9AC1A4FAAA1B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,12 +19,17 @@ Global
 		{1531F36F-3225-47B5-BD74-EC744CF609C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1531F36F-3225-47B5-BD74-EC744CF609C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1531F36F-3225-47B5-BD74-EC744CF609C3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B232E1B0-C594-4B1E-87B0-9AC1A4FAAA1B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B232E1B0-C594-4B1E-87B0-9AC1A4FAAA1B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B232E1B0-C594-4B1E-87B0-9AC1A4FAAA1B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B232E1B0-C594-4B1E-87B0-9AC1A4FAAA1B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{1531F36F-3225-47B5-BD74-EC744CF609C3} = {25D417F1-48D7-4C3D-8982-E7ED1085662D}
+		{B232E1B0-C594-4B1E-87B0-9AC1A4FAAA1B} = {25D417F1-48D7-4C3D-8982-E7ED1085662D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {CED1B0B3-7452-4A60-B799-B0190D58B25C}
