@@ -28,22 +28,20 @@ public abstract class RepositoryReadOnly<TContext, TEntity, TKey> : IRepositoryR
         var query = Context.Set<TEntity>().Where(predicate);
 
         foreach (var includeProperty in includeProperties)
+        {
             query = query.Include(includeProperty);
+        }
 
         if (orderBy is not null)
+        {
             return await orderBy(query).ToListAsync();
+        }
 
-        var data = await query.ToListAsync();
-
-        return new Maybe<IEnumerable<TEntity>>(data);
+        return await query.ToListAsync();
     }
 
-    public async Task<Maybe<TEntity>> GetByIdAsync(TKey id)
-    {
-        var data = await Context.Set<TEntity>().FindAsync(id);
-
-        return new Maybe<TEntity>(data);
-    }
+    public async Task<Maybe<TEntity>> GetByIdAsync(TKey id) =>
+        await Context.Set<TEntity>().FindAsync(id);
 
     public async Task<Maybe<TProjection>> ProjectionAsync<TProjection>(
         Expression<Func<TEntity, bool>> predicate,
@@ -53,11 +51,11 @@ public abstract class RepositoryReadOnly<TContext, TEntity, TKey> : IRepositoryR
         var query = Context.Set<TEntity>().AsNoTracking().Where(predicate);
 
         foreach (var includeProperty in includeProperties)
+        {
             query = query.Include(includeProperty);
+        }
 
-        var data = await query.Select(projection).FirstOrDefaultAsync();
-
-        return new Maybe<TProjection>(data);
+        return await query.Select(projection).FirstOrDefaultAsync();
     }
 
     public async Task<Maybe<IReadOnlyCollection<TProjection>>> ProjectionsAsync<TProjection>(
@@ -69,13 +67,15 @@ public abstract class RepositoryReadOnly<TContext, TEntity, TKey> : IRepositoryR
         var query = Context.Set<TEntity>().AsNoTracking().Where(predicate);
 
         foreach (var includeProperty in includeProperties)
+        {
             query = query.Include(includeProperty);
+        }
 
         if (orderBy is not null)
+        {
             query = orderBy(query);
+        }
 
-        var data = await query.Select(projection).ToListAsync();
-
-        return new Maybe<IReadOnlyCollection<TProjection>>(data);
+        return await query.Select(projection).ToListAsync();
     }
 }

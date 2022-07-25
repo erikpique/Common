@@ -15,9 +15,11 @@ public abstract class Repository<TContext, TEntity, TKey> : RepositoryReadOnly<T
         Context.ChangeTracker.QueryTrackingBehavior = QueryTrackingBehavior.TrackAll;
     }
 
-    public async Task AddAsync(TEntity entity) => await Context.Set<TEntity>().AddAsync(entity);
+    public async Task AddAsync(TEntity entity) => 
+        await Context.Set<TEntity>().AddAsync(entity);
 
-    public async Task AddAsync(IEnumerable<TEntity> entities) => await Context.Set<TEntity>().AddRangeAsync(entities);
+    public async Task AddAsync(IEnumerable<TEntity> entities) => 
+        await Context.Set<TEntity>().AddRangeAsync(entities);
 
     public Task RemoveAsync(TEntity entity)
     {
