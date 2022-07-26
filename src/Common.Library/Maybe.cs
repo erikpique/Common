@@ -1,6 +1,6 @@
 ﻿namespace Common.Library;
 
-public class Maybe<T> : IMaybe<T>
+public sealed class Maybe<T> : IMaybe<T>
 {
     public static readonly Maybe<T> Nothing = new();
 
@@ -16,5 +16,5 @@ public class Maybe<T> : IMaybe<T>
         Value = value;
     }
 
-    public static implicit operator Maybe<T>(T value) => new(value);
+    public static implicit operator Maybe<T>(T value) => value is not null ? new(value) : Nothing;
 }

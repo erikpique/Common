@@ -2,7 +2,7 @@
 
 using System;
 
-public class Result<T> : Either<T, Exception>
+public sealed class Result<T> : Either<T, Exception>
 {
     public Result(T left) : base(left)
     {
@@ -11,6 +11,8 @@ public class Result<T> : Either<T, Exception>
     public Result(Exception right) : base(right)
     {
     }
+
+    public bool Ok => IsLeft;
 
     public static implicit operator Result<T>(T value) => new(value);
 

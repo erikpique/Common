@@ -5,9 +5,9 @@ VisualStudioVersion = 17.2.32630.192
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{25D417F1-48D7-4C3D-8982-E7ED1085662D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common.Library", "scr\Common.Library\Common.Library.csproj", "{1531F36F-3225-47B5-BD74-EC744CF609C3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common.Library", "src\Common.Library\Common.Library.csproj", "{1531F36F-3225-47B5-BD74-EC744CF609C3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common.EFCore.Implementation", "scr\Common.EFCore.Implementation\Common.EFCore.Implementation.csproj", "{B232E1B0-C594-4B1E-87B0-9AC1A4FAAA1B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common.EFCore.Implementation", "src\Common.EFCore.Implementation\Common.EFCore.Implementation.csproj", "{B232E1B0-C594-4B1E-87B0-9AC1A4FAAA1B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
