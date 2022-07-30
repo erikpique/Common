@@ -16,5 +16,5 @@ public sealed class Maybe<T> : IMaybe<T>
         Value = value;
     }
 
-    public static implicit operator Maybe<T>(T value) => value is not null ? new(value) : Nothing;
+    public static implicit operator Maybe<T>(T value) => new(value);
 }

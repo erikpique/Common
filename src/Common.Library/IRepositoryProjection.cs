@@ -9,11 +9,13 @@ public interface IRepositoryProjection<TEntity, TKey>
     Task<Maybe<TProjection>> ProjectionAsync<TProjection>(
         Expression<Func<TEntity, bool>> predicate,
         Expression<Func<TEntity, TProjection>> projection,
+        CancellationToken cancellationToken = default,
         params string[] includeProperties);
 
     Task<Maybe<IReadOnlyCollection<TProjection>>> ProjectionsAsync<TProjection>(
         Expression<Func<TEntity, bool>> predicate,
         Expression<Func<TEntity, TProjection>> projection,
         Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>> orderBy = null,
+        CancellationToken cancellationToken = default,
         params string[] includeProperties);
 }
